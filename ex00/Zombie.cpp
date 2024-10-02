@@ -12,14 +12,14 @@
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string new_name) : _name(new_name)
+Zombie::Zombie(std::string new_name) //: _name(new_name)
 {
-	//_name = new_name;
-	std::cout << "Zombie constructor called" << std::endl;
+	_name = new_name;
+	std::cout << _name << ": constructor called" << std::endl;
 }
 Zombie::~Zombie()
 {
-	std::cout << "Zombie destructor called" << std::endl;
+	std::cout << _name << ": destructor called" << std::endl;
 }
 
 void Zombie::announce()

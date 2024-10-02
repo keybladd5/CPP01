@@ -10,4 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Zombie.hpp"
+
+int	main(void)
+{
+	std::string buff;
+	std::cout << "TEST: Heap VS Stack" << std::endl;
+	std::cout << "Heap zombie requires a name: ";
+	std::cin >> buff;
+	Zombie *heap = newZombie(buff);
+	heap->announce();
+	std::cout << "Stack zombie requires a name: ";
+	std::cin >> buff;
+	randomChump(buff);
+	delete heap;
+	return (0);
+}
 
