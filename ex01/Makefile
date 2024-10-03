@@ -10,17 +10,17 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	name
+NAME	=	horde
 
 CC		=	c++
 
-FLAGS	=	-g -Wall -Wextra -Werror -std=c++98 -MMD -fsanitize=address -pedantic 
+FLAGS	=	-g -Wall -Wextra -Werror -std=c++98 -MMD #-fsanitize=address -pedantic 
 
-SRC		=	.cpp main.cpp 
+SRC		=	Zombie.cpp main.cpp zombieHorde.cpp 
 
 OBJ		=	$(SRC:.cpp=.o)
 
-INCLUDE = 	.hpp
+INCLUDE = 	Zombie.hpp
 
 DEPS	=	$(SRC:.cpp=.d)
 
