@@ -14,7 +14,7 @@ NAME	=	horde
 
 CC		=	c++
 
-FLAGS	=	-g -Wall -Wextra -Werror -std=c++98 -MMD #-fsanitize=address -pedantic 
+FLAGS	=	-g -Wall -Wextra -Werror -std=c++98 -MMD -fsanitize=address -pedantic 
 
 SRC		=	Zombie.cpp main.cpp zombieHorde.cpp 
 
