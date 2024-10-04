@@ -10,10 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #ifndef HUMANB_H
 # define HUMANB_H
 
 # include "Weapon.hpp"
+# include <iostream>
+# include <string>
 
 class HumanB
 {
@@ -23,9 +26,11 @@ class HumanB
 			Weapon 		*_weapon;
 
 	public:
-			HumanB();
+			HumanB(std::string name);
+			HumanB(std::string name, Weapon *ptr);
 			~HumanB();
 			void	attack();
+			void	setWeapon(Weapon *ptr);
 };
 
 #endif
