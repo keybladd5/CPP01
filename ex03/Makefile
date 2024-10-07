@@ -16,11 +16,11 @@ CC		=	c++
 
 FLAGS	=	-g -Wall -Wextra -Werror -std=c++98 -MMD -fsanitize=address -pedantic 
 
-SRC		=	.cpp main.cpp 
+SRC		=	HumanA.cpp HumanB.cpp Weapon.cpp main.cpp 
 
 OBJ		=	$(SRC:.cpp=.o)
 
-INCLUDE = 	.hpp
+INCLUDE = 	HumanA.hpp HumanB.hpp Weapon.hpp
 
 DEPS	=	$(SRC:.cpp=.d)
 

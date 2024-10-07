@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 
 #pragma once
-#ifndef HUMANA_H
-# define HUMANA_H
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
 # include "Weapon.hpp"
 # include <iostream>

@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 
 #pragma once
-#ifndef HUMANB_H
-# define HUMANB_H
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
 # include "Weapon.hpp"
 # include <iostream>
@@ -27,10 +27,9 @@ class HumanB
 
 	public:
 			HumanB(std::string name);
-			HumanB(std::string name, Weapon *ptr);
 			~HumanB();
 			void	attack();
-			void	setWeapon(Weapon *ptr);
+			void	setWeapon(Weapon &ptr);
 };
 
 #endif

@@ -14,10 +14,14 @@
 
 Weapon::Weapon(std::string str) : _type(str)
 {
-	std::cout <<" Weapon constructor called" << std::endl;
+	std::cout <<"Weapon constructor called" << std::endl;
 }
 
 Weapon::~Weapon()
 {
-	std::cout <<" Weapon destructor called" << std::endl;
+	std::cout <<"Weapon destructor called" << std::endl;
 }
+
+std::string const &Weapon::getType(void) {return (_type);}
+
+void Weapon::setType(std::string str) {_type = str;}
