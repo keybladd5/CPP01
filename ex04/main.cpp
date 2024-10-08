@@ -14,33 +14,36 @@
 #include <string>
 #include <fstream>
 
-int	ft_replace(std::string buff, std::string s1, std::string s2)
+void	ft_replace(std::string &buff, std::string s1, std::string s2)
 {
-	//encontrar el s1 en el buff
-	//eliminar el s1 del buff
-	//escribir en buff[posicion de inicio de s1] hasta lo que ocupe s2, y desplazar los caracters restantes del buff
+	size_t length_buff = buff.length(), pos = buff.find(s1);
+	std::string str;
+	while(pos != std::string::npos)
+	{
+		buff = buff.substr(0, pos) + s2 + buff.substr(buff.find(s1) + s1.length(), length_buff);
+		pos = buff.find(s1, pos + s2.length());
+	}
 }
-
 int	main(int argc, char **argv)
 {
-	if (argc == 1)
+	if (argc != 4)
 		return (1);
 	std::string buff;
 	std::ifstream input(argv[1]);
-	//should add argv[1] + .replace
-	std::ofstream output(".replace");
 	if (!input.is_open())
 	{
 		std::cout << "unable to open " << argv[1] << std::endl;
 		return (1);
 	}
-	//std::cout << "archivo abierto con el siguiente contenido : " << std::endl;
+	buff = argv[1];
+	buff += ".replace";
+	std::ofstream output(buff.c_str());
+	buff.erase();
 	while (std::getline(input, buff))
 	{
-		ft_replace(buff, argv[2], argv[3]);
+		ft_replace(buff, std::string(argv[2]), std::string(argv[3]));
 		output << buff << std::endl;
 	}
 	input.close();
-
 	return (0);
 }
