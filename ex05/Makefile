@@ -10,11 +10,11 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	replace
+NAME	=	harl
 
 CC		=	c++
 
-FLAGS	=	-g  -std=c++98 -MMD -fsanitize=address -pedantic 
+FLAGS	=	-g  -Wall -Wextra -Werror -std=c++98 -MMD -fsanitize=address -pedantic 
 
 SRC		=	 main.cpp Harl.cpp
 
@@ -39,15 +39,15 @@ all		:	$(NAME)
 
 $(NAME)	:	$(OBJ)
 		@$(CC) $(FLAGS) $(OBJ) -o $(NAME) 
-		@echo "${PURPLE}CPP01 ex01 binary Compiled${NC}"
+		@echo "${PURPLE}CPP01 ex05 binary Compiled${NC}"
 
 clean:
 		@rm -rf $(OBJ) $(DEPS)
-		@echo "${RED}CPP01 ex01 object removed${NC}"
+		@echo "${RED}CPP01 ex05 object removed${NC}"
 
 fclean:		clean
 		@rm -rf $(NAME)
-		@echo "${RED}CPP01 ex01 binary removed${NC}"
+		@echo "${RED}CPP01 ex05 binary removed${NC}"
 
 re:		fclean all
 

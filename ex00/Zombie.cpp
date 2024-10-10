@@ -12,6 +12,10 @@
 
 #include "Zombie.hpp"
 
+Zombie::Zombie(void)
+{
+	std::cout << _name << ": constructor called" << std::endl;
+}
 Zombie::Zombie(std::string new_name) //: _name(new_name)
 {
 	_name = new_name;
