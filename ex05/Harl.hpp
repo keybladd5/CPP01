@@ -22,7 +22,6 @@ class Harl
 			void	info(void);
 			void	warning(void);
 			void	error(void);
-			void (Harl::*_f[4])(void);
 	public:
 			Harl();
 			~Harl();

@@ -14,10 +14,6 @@
 
 Harl::Harl(void)
 {
-	_f[0] = &Harl::debug;
-	_f[1] = &Harl::info;
-	_f[2] = &Harl::warning;
-	_f[3] = &Harl::error;
 	std::cout << "Harl constructor called" << std::endl;
 }
 
@@ -48,10 +44,11 @@ void	Harl::error(void)
 
 void	Harl::complain(std::string level)
 {
+	void (Harl::*f[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	std::string harl_levels[4] ={"DEBUG", "INFO", "WARNING", "ERROR"};
 	for (int i = 0; i < 4; i++)
 	{
 		if (level == harl_levels[i])
-			(this->*_f[i])();
+			(this->*f[i])();
 	} 
 }
